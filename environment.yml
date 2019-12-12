@@ -5,3 +5,5 @@ dependencies:
   - numpy
   - matplotlib
   - pandas
+  - scipy
+  - measurements
