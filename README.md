@@ -3,3 +3,5 @@ The "perco.ipynb" is a Jupyter python percolation application showing a percolat
 https://xsources.github.io/sitepercol.html
 
 3- The "percoimg.png" file is a screen capture of the interactive percolation app.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/xsources/python-percolation/master)
