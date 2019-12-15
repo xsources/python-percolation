@@ -1,0 +1,38 @@
+#Author: Said Boutiche email:myelearningzatgmail
+from ipywidgets import interact, interactive, fixed, interact_manual
+import ipywidgets as widgets
+from IPython.display import display
+import numpy as np;
+import matplotlib.pyplot as plt;
+import matplotlib as mpl;
+from IPython.display import display
+from scipy.ndimage import measurements;
+
+colors = ['white',[.8,.8,.8],'black'];
+cmap = mpl.colors.ListedColormap(colors)
+mpl.rcParams['figure.figsize'] = (6,6)
+
+def size(N=10):
+    R = np.random.random((N,N));
+
+    def plot(c=(0,N*N)):
+        #R = np.random.random((N,N));
+        ax=plt.gca();
+        
+        
+        B = np.where(R < c/(N*N), 1, 0);  
+        lw, num = measurements.label(B);
+        area = measurements.sum(B, lw, index=np.arange(lw.max() + 1));    
+        sB=B.sum();    
+        lcp=np.max(area);
+        ix=[i for i, x in enumerate(area) if x == lcp];    
+        xa = np.array(ix);    
+        C = np.where(lw ==xa[0], 1, 0);    
+        D=B+C;    
+        p=sB/(N*N); 
+        im = ax.imshow(D, cmap);
+        ##uncomment next line to display parameters
+        #print("p= ",p, "c= ",sB,"LC= ",int(lcp))
+  
+    interact(plot,c=widgets.IntSlider(min=10,max=N*N,step=1,value=10,description='Concentr.='));
+interact(size,N=widgets.IntSlider(min=10,max=510,step=10,value=20,description='Size(NxN) N='));
