@@ -4,4 +4,5 @@ https://xsources.github.io/sitepercol.html
 
 3- The "percoimg.png" file is a screen capture of the interactive percolation app.
 
-update: Variable N of NxN square lattice site percolation (file square_perco.ipynb) is available here:[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/xsources/python-percolation/master).
+UPDATE: The side N of the NxN square lattice site percolation (file square_perco.ipynb) is available here:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/xsources/python-percolation/master).
